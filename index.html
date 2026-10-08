@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Mastery ID — Belajar AI dari Nol sampai Menghasilkan</title>
+<meta name="description" content="Kursus AI 5 modul untuk pemula Indonesia: dasar LLM, prompt engineering, AI agents, vibe coding, monetisasi produk AI. Plus kuis, flashcard, sertifikat. Bisa offline.">
+<meta name="theme-color" content="#4F46E5">
+<meta name="color-scheme" content="light">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="AI Mastery">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="brandLogo" viewBox="0 0 512 512">
+      <rect width="512" height="512" rx="116" fill="#4F46E5"/>
+      <rect x="26" y="26" width="460" height="460" rx="96" fill="none" stroke="#C7D2FE" stroke-opacity=".55" stroke-width="6"/>
+      <circle cx="256" cy="256" r="134" fill="#EEF2FF"/>
+      <circle cx="212" cy="238" r="21" fill="#4F46E5"/>
+      <circle cx="300" cy="238" r="21" fill="#4F46E5"/>
+      <path d="M198 302c18 20 39 30 58 30s40-10 58-30" fill="none" stroke="#EA580C" stroke-width="20" stroke-linecap="round"/>
+      <path d="M256 92v28M256 392v28M120 256H92M420 256h-28" stroke="#C7D2FE" stroke-width="18" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.7V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.7"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H19v-3"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.2 14.2 6 22l6-3 6 3-2.2-7.8"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v15l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v15M15 6v15"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4.5v15l13-7.5z"/></symbol>
+    <symbol id="i-cards" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="13" height="14" rx="2.5"/><path d="M8 4h10a2 2 0 0 1 2 2v11"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M15 5.5A2.5 2.5 0 0 0 12.5 3H5.5A2.5 2.5 0 0 0 3 5.5v7A2.5 2.5 0 0 0 5.5 15"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="10.5" rx="3"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 6.5-2.7 6.5-6.2 0-4.4-4.3-6-4.3-9.8 0-1.6.6-2.6 1-3-3 .5-6 3.1-6 7 0 1.4-.6 2-1.3 2-.8 0-1.4-.8-1.4-2C5 12.6 5.5 22 12 22Z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5"/><path d="M4 17v2.5A1.5 1.5 0 0 0 5.5 21h13A1.5 1.5 0 0 0 20 19.5V17"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="m8.4 10.8 7.2-4.2M8.4 13.2l7.2 4.2"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-13.7-5.3L3 9"/><path d="M3 4v5h5"/><path d="M4 13a8 8 0 0 0 13.7 5.3L21 15"/><path d="M21 20v-5h-5"/></symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3A3.5 3.5 0 0 0 6 6.5 3 3 0 0 0 5 12a3 3 0 0 0 .6 4.6A3.5 3.5 0 0 0 9.5 21H12V3z"/><path d="M14.5 3A3.5 3.5 0 0 1 18 6.5 3 3 0 0 1 19 12a3 3 0 0 1-.6 4.6A3.5 3.5 0 0 1 14.5 21H12"/></symbol>
+    <symbol id="i-wand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 15.5 8.5"/><path d="M13.5 6.5 17.5 10.5"/><path d="M19 3v4M17 5h4M7 4.5v3M5.5 6h3"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M10 2v2M14 2v2M10 20v2M14 20v2M2 10h2M2 14h2M20 10h2M20 14h2"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-5 6 5 6M16 6l5 6-5 6"/></symbol>
+    <symbol id="i-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="6" rx="6" ry="3"/><path d="M3 6v5c0 1.7 2.7 3 6 3s6-1.3 6-3V6"/><path d="M9 14v4c0 1.7 2.7 3 6 3s6-1.3 6-3v-5c0-1.7-2.7-3-6-3"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13.5a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7L11.5 6"/><path d="M14 10.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7L12.5 18"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21.5h4"/><path d="M12 2.5A6.5 6.5 0 0 0 8.5 14v1.4A2 2 0 0 0 10.5 17h3a2 2 0 0 0 2-1.6V14A6.5 6.5 0 0 0 12 2.5Z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19z"/><path d="M12 9.5v4.5M12 17.2v.3"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 5.5H4.5V7A3.5 3.5 0 0 0 7 10.3M17 5.5h2.5V7A3.5 3.5 0 0 1 17 10.3"/><path d="M12 14v3.5M8.5 21h7"/></symbol>
+  </defs>
+</svg>
+
+<header class="app-bar">
+  <div class="app-bar__inner">
+    <button class="brand" data-go="home" aria-label="Ke beranda">
+      <svg class="brand__mark" viewBox="0 0 512 512" aria-hidden="true"><use href="#brandLogo"/></svg>
+      <span class="brand__name">AI Mastery <em>ID</em></span>
+    </button>
+    <button class="who" id="whoBtn" aria-label="Ubah nama">
+      <span class="who__av" aria-hidden="true"><svg width="17" height="17"><use href="#i-user"/></svg></span>
+      <span id="whoName">Siswa AI</span>
+    </button>
+  </div>
+  <div class="app-bar__rail" role="progressbar" aria-label="Progres belajar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="topRail">
+    <i></i>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ BERANDA ============ -->
+  <section class="screen active" id="screen-home" aria-labelledby="homeTitle">
+    <div class="card resume" style="--i:0">
+      <p class="eyebrow" id="homeGreet">Selamat datang</p>
+      <h1 id="homeTitle">Belajar AI dari nol, sampai bisa jualan.</h1>
+      <p class="lede">Lima modul berurutan. Tiap modul: penjelasan simpel, contoh siap pakai, kuis, lalu flashcard.</p>
+      <div style="margin-top:18px">
+        <div class="bar bar--accent"><i id="resumeBar"></i></div>
+        <div class="bar__meta"><span id="resumeLabel">Belum mulai</span><span id="resumePct">0%</span></div>
+      </div>
+      <div class="btn-row" style="margin-top:18px">
+        <button class="btn btn--accent" id="resumeBtn">
+          <svg width="19" height="19" aria-hidden="true"><use href="#i-play"/></svg>
+          <span id="resumeBtnLabel">Mulai Modul 1</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="quick" style="--i:1">
+      <button data-go="flashpick">
+        <svg aria-hidden="true"><use href="#i-cards"/></svg>Flashcard
+      </button>
+      <button data-go="exam">
+        <svg aria-hidden="true"><use href="#i-award"/></svg>Ujian Akhir
+      </button>
+      <button data-go="cert">
+        <svg aria-hidden="true"><use href="#i-trophy"/></svg>Sertifikat
+      </button>
+    </div>
+
+    <div class="section-title" style="--i:2">
+      <svg aria-hidden="true"><use href="#i-list"/></svg>
+      <h2>Lima modul</h2>
+    </div>
+    <ul class="rail" id="moduleRail" style="--i:3"></ul>
+
+    <div class="section-title" style="--i:4">
+      <svg aria-hidden="true"><use href="#i-link"/></svg>
+      <h2>Tentang materi ini</h2>
+    </div>
+    <div class="card" style="--i:5">
+      <p>Semua materi disusun ulang dengan kata sendiri dari dokumentasi resmi dan artikel tepercaya. Sumber aslinya dicantumkan di bagian bawah setiap modul, supaya kamu bisa cek langsung.</p>
+      <p class="tiny" style="margin-top:12px">Progres belajarmu disimpan di perangkat ini saja (localStorage). Tidak ada akun, tidak ada data yang dikirim ke mana pun.</p>
+    </div>
+  </section>
+
+  <!-- ============ MODUL ============ -->
+  <section class="screen" id="screen-module" aria-labelledby="modTitle"></section>
+  <section class="screen" id="screen-flashpick" aria-labelledby="fpTitle"></section>
+
+  <!-- ============ KUIS ============ -->
+  <section class="screen" id="screen-quiz" aria-labelledby="quizTitle"></section>
+
+  <!-- ============ FLASHCARD ============ -->
+  <section class="screen" id="screen-flash" aria-labelledby="flashTitle"></section>
+
+  <!-- ============ UJIAN AKHIR ============ -->
+  <section class="screen" id="screen-exam" aria-labelledby="examTitle"></section>
+
+  <!-- ============ SERTIFIKAT ============ -->
+  <section class="screen" id="screen-cert" aria-labelledby="certTitle"></section>
+
+  <!-- ============ STATISTIK ============ -->
+  <section class="screen" id="screen-stats" aria-labelledby="statsTitle"></section>
+
+  <!-- ============ ROADMAP ============ -->
+  <section class="screen" id="screen-roadmap" aria-labelledby="rmTitle"></section>
+
+</main>
+
+<nav class="tabbar" aria-label="Navigasi utama">
+  <button class="tab" data-go="home" aria-current="page"><svg aria-hidden="true"><use href="#i-home"/></svg>Beranda</button>
+  <button class="tab" data-go="modules"><svg aria-hidden="true"><use href="#i-book"/></svg>Modul</button>
+  <button class="tab" data-go="exam"><svg aria-hidden="true"><use href="#i-award"/></svg>Ujian</button>
+  <button class="tab" data-go="stats"><svg aria-hidden="true"><use href="#i-chart"/></svg>Statistik</button>
+  <button class="tab" data-go="roadmap"><svg aria-hidden="true"><use href="#i-map"/></svg>Roadmap</button>
+</nav>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="nameDialog" aria-labelledby="ndTitle">
+  <h3 id="ndTitle">Nama untuk sertifikat</h3>
+  <p class="tiny">Nama ini dipakai di sertifikat kelulusan. Nanti bisa diubah kapan saja.</p>
+  <label class="field" for="nameInput">Nama kamu</label>
+  <input type="text" id="nameInput" placeholder="Siswa AI" maxlength="48" autocomplete="name" enterkeyhint="done">
+  <div class="btn-row" style="margin-top:20px">
+    <button class="btn btn--ghost" id="nameCancel">Nanti saja</button>
+    <button class="btn" id="nameSave">Simpan</button>
+  </div>
+</dialog>
+
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

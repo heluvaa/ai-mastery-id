@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Seed progres (alat pengembangan)</title>
+<style>body{font-family:system-ui;padding:24px;color:#1E1B4B}</style>
+</head>
+<body>
+<p id="msg">Menyiapkan data…</p>
+<script>
+/* Alat pengembangan: mengisi localStorage lalu membuka aplikasi.
+   Dipakai untuk mengambil tangkapan layar dan menguji tampilan
+   dalam kondisi "sudah lulus". Tidak dipakai oleh aplikasi itu sendiri.
+   Contoh: tools/seed.html?to=%23cert  atau  ?to=%23stats&partial=1 */
+(function () {
+  var p = new URLSearchParams(location.search);
+  var to = p.get('to') || '#home';
+  var partial = p.get('partial') === '1';
+  var today = new Date();
+  var key = function (d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+  var days = {};
+  for (var i = 0; i < 22; i++) {
+    var d = new Date(today.getTime() - i * 864e5);
+    days[key(d)] = i % 4 === 3 ? 0 : (i % 3 === 0 ? 5 : (i % 2 === 0 ? 3 : 1));
+  }
+  var state = {
+    v: 1, name: 'Zico', nameSet: true, createdAt: Date.now() - 864e5 * 9,
+    modules: {}, exam: { attempts: [] }, cert: null,
+    days: days, lastDay: key(today),
+    streak: { current: 6, best: 9 }
+  };
+  var ids = ['m1', 'm2', 'm3', 'm4', 'm5'];
+  ids.forEach(function (id, i) {
+    state.modules[id] = {
+      read: true, lastLesson: i === 2 ? 3 : 0, scroll: 0,
+      quiz: { best: [80, 75, 90, 70, 85][i], attempts: [{ date: Date.now() - i * 36e5, score: [80, 75, 90, 70, 85][i], correct: 4, total: 5 }] },
+      fc: { seen: {}, mastered: {} }
+    };
+  });
+  if (partial) {
+    state.name = 'Siswa AI'; state.nameSet = false;
+    state.modules.m3.read = false;
+    state.modules.m3.quiz = { best: 0, attempts: [] };
+    state.modules.m4.read = false;
+    state.modules.m4.quiz = { best: 0, attempts: [] };
+    state.modules.m5.read = false;
+    state.modules.m5.quiz = { best: 0, attempts: [] };
+    state.streak = { current: 1, best: 3 };
+    state.lastDay = null;
+  }
+  if (p.get('lulus') === '1') {
+    state.exam.attempts = [{ date: Date.now() - 36e5, score: 85, correct: 17, total: 20 }];
+    state.cert = { name: state.name, score: 85, date: Date.now() - 36e5, id: 'AIM20260815' };
+  }
+  try {
+    localStorage.setItem('aiMastery.v1', JSON.stringify(state));
+    document.getElementById('msg').textContent = 'Data siap. Membuka aplikasi…';
+    location.replace('../index.html' + to);
+  } catch (e) {
+    document.getElementById('msg').textContent = 'Gagal menyiapkan data: ' + e.message;
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# artefak alat desain — tidak perlu ikut terkirim
+.impeccable/
+
+# dependensi
+node_modules/
+
+# cadangan & log
+*.log
+*.bak
+
+# berkas sementara alat uji
+tools/_*.txt
+tools/_*.js
