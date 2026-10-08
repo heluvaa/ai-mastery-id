@@ -37,8 +37,13 @@
       fc: { seen: {}, mastered: {} }
     };
   });
-  if (partial) {
+  if (p.get('first') === '1') {
+    /* kondisi pengguna baru: belum ada nama, belum mulai apa pun */
     state.name = 'Siswa AI'; state.nameSet = false;
+    state.modules = {}; state.exam.attempts = []; state.cert = null;
+    state.streak = { current: 0, best: 0 }; state.lastDay = null; state.days = {};
+  }
+  if (partial) {
     state.modules.m3.read = false;
     state.modules.m3.quiz = { best: 0, attempts: [] };
     state.modules.m4.read = false;

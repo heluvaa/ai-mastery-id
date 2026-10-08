@@ -873,7 +873,9 @@
 
     var frame = el('div', 'cert-frame');
     frame.style.setProperty('--i', '1');
-    frame.innerHTML = '<canvas id="certCanvas" width="1600" height="1132" role="img" aria-label="Sertifikat kelulusan atas nama ' + esc(cert.name) + '"></canvas>';
+    frame.innerHTML =
+      '<canvas id="certCanvas" width="1600" height="1132" role="img" aria-label="Sertifikat kelulusan atas nama ' + esc(cert.name) + ', skor ' + cert.score + ' persen"></canvas>' +
+      '<p class="tiny no-print" style="margin-top:10px">Pratinjau diperkecil agar bentuk sertifikat terlihat utuh. Ketuk <b>Perbesar</b> untuk membacanya dalam ukuran penuh.</p>';
     sec.appendChild(frame);
 
     var act = el('div', 'card');
@@ -882,7 +884,8 @@
       '<div class="btn-row">' +
       '<button class="btn btn--accent" id="dlBtn">' + icon('download') + 'Unduh gambar</button>' +
       '<button class="btn btn--ghost" id="shareBtn">' + icon('share') + 'Bagikan</button>' +
-      '<button class="btn btn--ghost" id="printBtn">' + icon('list') + 'Cetak / PDF</button>' +
+      '<button class="btn btn--ghost" id="zoomBtn">' + icon('zoom') + 'Perbesar</button>' +
+      '<button class="btn btn--ghost" id="printBtn">' + icon('print') + 'Cetak / PDF</button>' +
       '</div>' +
       '<p style="margin-top:16px;font-weight:700">Atas nama: <span style="color:var(--c-primary-deep)">' + esc(cert.name) + '</span></p>' +
       '<p class="tiny" style="margin-top:6px">ID sertifikat: <b>' + esc(cert.id) + '</b> · skor ujian akhir: <b>' + cert.score + '%</b> · terbit ' + fmtDateID(cert.date) + '</p>' +
@@ -893,6 +896,17 @@
     $('#dlBtn', act).addEventListener('click', function () { downloadCert(cert); });
     $('#shareBtn', act).addEventListener('click', function () { shareCert(cert); });
     $('#printBtn', act).addEventListener('click', function () { window.print(); });
+    $('#zoomBtn', act).addEventListener('click', function () {
+      var cv = document.getElementById('certCanvas');
+      if (!cv || typeof cv.toBlob !== 'function') return;
+      cv.toBlob(function (blob) {
+        if (!blob) return;
+        var url = URL.createObjectURL(blob);
+        var w = window.open(url, '_blank');
+        if (!w) { downloadCert(cert); toast('Jendela baru diblokir — sertifikat diunduh'); }
+        setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
+      }, 'image/png');
+    });
   }
 
   function roundRect(ctx, x, y, w, h, r) {
